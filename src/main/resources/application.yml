@@ -1,0 +1,28 @@
+server:
+  port: 8088
+spring:
+  application:
+    name: hpblog
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/hpblog?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=Hongkong&allowPublicKeyRetrieval=true
+    password: 123456
+    username: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath:mapper/*Mapper.xml
+
+# jwt验证
+hp:
+  jwt:
+    secret: f4e2e52034348f86b67cde581c0f9eb5
+    expire: 604800
+    header: Authorization
+
+
+# 文件上传目录
+file:
+  uploadFolder: F://JAVAEE//hpblog-vue//src//assets//image
